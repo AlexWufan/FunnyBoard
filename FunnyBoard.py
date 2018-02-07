@@ -1,11 +1,7 @@
 from flask import Flask
 from flask import render_template
 import json
-import os
 
-
-with open('/Users/Ziwen/PycharmProjects/FunnyBoard/data.json', 'r') as f:
-    a = json.load(f)
 
 
 app = Flask(__name__)

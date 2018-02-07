@@ -105,11 +105,17 @@
 
         // Create markers.
         features.forEach(function(feature) {
+            var infowindow = new google.maps.InfoWindow({
+                content: 'a test string'
+            });
           var marker = new google.maps.Marker({
             position: feature.position,
             icon: icons[feature.type].icon,
             map: map
           });
+
+
+            infowindow.open(map, marker);
         });
       }
     </script>
