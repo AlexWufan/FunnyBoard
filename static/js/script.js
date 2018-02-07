@@ -1,11 +1,4 @@
-{% extends "base.html" %}
-
-{% block title %} marker {% endblock %}
-
-{% block map %}
-<div id="map"></div>
-    <script>
-      var map;
+var map;
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
           zoom: 2,
@@ -35,8 +28,3 @@
           });
         }
       }
-    </script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADveKVzkC7-VCEp33ZL_agEpXvyCrcdUc&callback=initMap">
-    </script>
-{% endblock %}

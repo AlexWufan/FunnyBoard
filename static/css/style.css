@@ -1,0 +1,44 @@
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-image: url(http://cache3.asset-cache.net/xd/513613106.jpg?v=1&c=IWSAsset&k=2&d=62CA815BFB1CE48010D0F2FCC3A0EA462B6A5D266AEA58DB3A545B36FD6752504C89169F47E31A24);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #464646;
+  }
+#map {
+        height: 100%;
+      }
+      
+#header {
+    background-color:blue;
+    color:white;
+    text-align:center;
+    padding:5px;
+}
+#nav {
+    line-height:30px;
+    background-color:#eeeeee;
+    height:300px;
+    width:100px;
+    float:left;
+    padding:5px;        
+}
+#section {
+    width:350px;
+    float:left;
+    padding:10px;    
+}
+#footer {
+    background-color:red;
+    color:white;
+    clear:both;
+    text-align:center;
+   padding:5px;    
+}
