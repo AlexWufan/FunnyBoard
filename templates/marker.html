@@ -1,63 +1,9 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <style>
-      /* Always set the map height explicitly to define the size of the div
-       * element that contains the map. */
-      #map {
-        height: 100%;
-      }
-      /* Optional: Makes the sample page fill the window. */
-      html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
+{% extends "base.html" %}
 
-      #header {
-          background-color:black;
-          color:white;
-          text-align:center;
-          padding:5px;
-      }
-      #nav {
-          line-height:30px;
-          background-color:#eeeeee;
-          height:300px;
-          width:100px;
-          float:left;
-          padding:5px;        
-      }
-      #section {
-          width:350px;
-          float:left;
-          padding:10px;    
-      }
-      #footer {
-          background-color:black;
-          color:white;
-          clear:both;
-          text-align:center;
-         padding:5px;    
-      }
+{% block title %} marker {% endblock %}
 
-
-    </style>
-  </head>
-  <body>
-  <div id="header">
-  <p><a href="login.html">login</a></p>
-  <p><a href="login.html">register</a></p>
-  <h1>Funnyboard</h1>
-  </div>
-
-  <div id="nav">
-  <p><a href="post.html">发布板报</a></p>
-  <p><a href="post.html">编辑板报</a></p>
-  <p><a href="post.html">编辑个人信息</a></p>
-  </div>
-
-    <div id="map"></div>
+{% block map %}
+<div id="map"></div>
     <script>
       var map;
       function initMap() {
@@ -79,8 +25,7 @@
       // set of coordinates.
       window.eqfeed_callback = function(results) {
         for (var i = 0; i < results.features.length; i++) {
-
-          var icon = "true.jpeg";
+          var icon = "../res/pin_red.jpeg";
           var coords = results.features[i].geometry.coordinates;
           var latLng = new google.maps.LatLng(coords[1],coords[0]);
           var marker = new google.maps.Marker({
@@ -94,9 +39,4 @@
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADveKVzkC7-VCEp33ZL_agEpXvyCrcdUc&callback=initMap">
     </script>
-    <div id="footer">
-    footer
-    </div>
-
-  </body>
-</html>
+{% endblock %}

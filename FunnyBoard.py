@@ -11,6 +11,12 @@ def hello_world():
 @app.route('/marker')
 def maker():
     return render_template('marker.html')
+@app.route('/login')
+def login():
+    return render_template('login.html')
+@app.route('/post')
+def post():
+    return render_template('post.html')
 
 if __name__ == '__main__':
     app.run()
