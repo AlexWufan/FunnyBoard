@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+{% block title %} 
+<title>simple map</title>
+{% endblock %}
+
+
+<head>
+<link rel="stylesheet" type="text/css" href="../style/style.css" />
+{% block head %}
+{% endblock %}
+</head>
+
+<body>
+{% block page_content %}
+
+	{% block header %}
+	<header>
+	      <div id="header">
+		  <p><a href="login">login</a></p>
+		  <p><a href="login">register</a></p>
+		  <h1>Funnyboard</h1>
+		  </div>
+
+	</header>
+	{% endblock %}
+
+	{% block nav %}
+	 <div id="nav">
+	  <p><a href="post">发布板报</a></p>
+	  <p><a href="post">编辑板报</a></p>
+	  <p><a href="post">编辑个人信息</a></p>
+	  </div>
+	{% endblock %}
+
+	{% block map %}
+
+	{% endblock %}
+
+	{% block footer %}
+	    <div id="footer">
+	    footer
+	    </div>
+	{% endblock %}
+{% endblock %}
+</body>
+</html> 
