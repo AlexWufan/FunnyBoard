@@ -1,13 +1,27 @@
 from flask import Flask, render_template, request
+from flask_bootstrap import Bootstrap
+from forms import LoginForm
 import json
 
 app = Flask(__name__)
-
+app.config.update(dict(
+    SECRET_KEY="powerful secretkey",
+    WTF_CSRF_SECRET_KEY="a csrf secret key"
+))
+Bootstrap(app)
 
 @app.route('/')
 def hello_world():
     return render_template('index.html')
 
+@app.route('/login')
+def login():
+    form = LoginForm()
+    return render_template('login.html', title="Sign In", form=form)
+
+@app.route('/register')
+def register():
+    return render_template('register.html')
 
 # @app.route('/marker')
 # def maker():
@@ -53,7 +67,7 @@ def create():
 
         data['features'].append(new_feature)
 
-        with open('data2.json', 'w') as f:
+        with open('/Users/Ziwen/PycharmProjects/FunnyBoard/data2.json', 'w') as f:
             json.dump(data, f)
 
     return render_template('1.html', data=data)
